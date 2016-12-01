@@ -1,0 +1,56 @@
+<html ng-app="todoApp">
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="myStyles.css"/>
+      <script type="text/javascript" src="moment/moment.js"></script>
+
+      <script src="todo.js"></script>
+   </head>
+   
+   <body>
+      <div ng-controller="TodoListController as todoList">
+         <div class="card">
+            <nav>
+                <div class="nav-wrapper" >
+                  <div class="brand-logo"><i class="material-icons">schedule</i> Build Time Management application Project </div>
+                  <strong style="float:right">Project Time: {{projectTime}} | Time Remaining:  {{timeRemaining}}</strong>
+                </div>
+           </nav>
+
+
+            <div class="card-content">
+               <div class="row">
+                  <h5> Tasks to Complete</h5>
+                   <ul class="collapsible" data-collapsible="accordion" ng-repeat="item in taskList">
+                      <li>
+                        <div class="collapsible-header">
+                           {{item.name}}
+                           <strong style="float:right">{{item.hours}} hours {{item.minutes}} minutes</strong>
+
+                        </div>
+                        <div class="collapsible-body">
+                           <p>{{item.discription}}</p><br>
+                              <div class="timeAdjustment">
+                                <input ng-model="user.name" type="number" id="timeInput"> Hours
+                                <input id="timeInput"> Minutes
+                                <a class="waves-effect waves-light btn" ng-click="addTime()">Update Time</a>
+                              </div>
+
+                              <div class ="myClear"></div>
+                        </div>
+
+                      </li>
+                    </ul>
+               </div>
+            </div>
+           
+         </div>
+      </div>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+   </body>
+   </body>
+</html>

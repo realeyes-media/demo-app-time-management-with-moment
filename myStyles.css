@@ -1,0 +1,26 @@
+
+.custom_wrap{
+	width:350px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#timeInput{
+	width:40px;
+	margin-right: 10px;
+	margin-left:10px;
+}
+
+.timeAdjustment{
+	float:right;
+	margin: 0px 20px;
+}
+
+.nav-wrapper{
+	margin-left:25px !important;
+	margin-right:25px !important;
+}
+
+.myClear{
+	clear:both;
+}

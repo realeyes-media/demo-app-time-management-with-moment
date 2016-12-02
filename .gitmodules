@@ -4,6 +4,4 @@
 [submodule "angular.js"]
 	path = angular.js
 	url = https://github.com/angular/angular.js
-[submodule "moment"]
-	path = moment
-	url = https://github.com/moment/moment
+

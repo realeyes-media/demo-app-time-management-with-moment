@@ -7,6 +7,7 @@
       <script type="text/javascript" src="moment/moment.js"></script>
 
       <script src="todo.js"></script>
+      <title>Time tracking with Moment</title>
    </head>
    
    <body>
@@ -15,7 +16,7 @@
             <nav>
                 <div class="nav-wrapper" >
                   <div class="brand-logo"><i class="material-icons">schedule</i> Build Time Management application Project </div>
-                  <strong style="float:right">Deadline : {{projectTime}} </strong>
+                  <strong style="float:right">Deadline : {{deadline}} </strong>
                 </div>
            </nav>
 
@@ -47,8 +48,10 @@
             </div>
       <div class="nav-wrapper">
           <h5> Project Status </h5>
-         <h5  class="card-panel teal lighten-2 white-text">  Time till Deadline : {{projectTime}}</h5>
-         <h5  class="card-panel teal lighten-2 white-text">  Amount of extra time till deadline: {{projectTime}}</h5>
+         <h5  class="card-panel teal lighten-2 white-text">  Start now, finish at : {{timeTillDeadline}}</h5>
+
+         <h5  class="card-panel teal lighten-2 white-text" ng-show="stillHaveTime">  You still have time! </h5>
+        <h5  class="card-panel teal lighten-2 white-text" ng-hide="stillHaveTime">  You dont have enought time till the deadline</h5>
          <br>
       </div>
 

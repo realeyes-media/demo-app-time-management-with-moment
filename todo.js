@@ -1,8 +1,11 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function($scope) {
-    
-$scope.timeRemaining = moment().format(' h:mm:ss a'); 
-$scope.projectTime = moment().format('h:mm:ss a'); 
+$scope.projHrs = 20;
+$scope.projMins = 45; 
+
+$scope.projectTime = $scope.projHrs + ' Hours ' + $scope.projMins + ' Minutes '; 
+$scope.timeRemaining =  $scope.projectTime; 
+
 
 $scope.taskList = [{
     name: 'Create list of requirements',
@@ -43,14 +46,18 @@ $scope.taskList = [{
 
 
 $scope.addTime = function(id, hour, minute) {
+    if(!hour){hour = 0};
+    if(!minute){minute = 0};
     for (i = 0; i < $scope.taskList.length; i++) { 
         if(id = $scope.taskList[i]){
-
+            $scope.taskList[i].hours = $scope.taskList[i].hours + hour;
+            $scope.taskList[i].minutes = $scope.taskList[i].minutes + minute;
         }
     }
 
-   // $scope.timeRemaining = ;//subtract new time from project time;
-
+  $scope.projHrs = $scope.projHrs + hour;
+  $scope.projMins = $scope.projMins + minute;
+  $scope.projectTime = $scope.projHrs + ' Hours ' + $scope.projMins + ' Minutes ';
 }
 
 });
